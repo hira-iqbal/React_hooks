@@ -40,8 +40,8 @@ const Login = (props) => {
   const [emailState, dispatchEmail] = useReducer((emailReducer) , { value: '', isValid: null });
   const [passwordState, dispatchPassword] = useReducer((passwordReducer) , { value: '', isValid: null });
 
-  const {isValid: emailIsValid} = emailState;
-  const {isValid: passwordIsValid} = passwordState;
+  const { isValid: emailIsValid } = emailState;
+  const { isValid: passwordIsValid } = passwordState;
 
   useEffect(() => {
     console.log('Effect executed')
@@ -66,14 +66,14 @@ const Login = (props) => {
   }, [emailIsValid, passwordIsValid]);
 
   const emailChangeHandler = (event) => {
-    dispatchEmail({type: 'User_Input', val: event.target.value});
+    dispatchEmail({ type: 'User_Input', val: event.target.value });
     // setFormIsValid(
     //   emailState.isValid && passwordState.isValid
     // );
   };
 
   const passwordChangeHandler = (event) => {
-    dispatchPassword({type: 'User_Input', val: event.target.value});
+    dispatchPassword({ type: 'User_Input', val: event.target.value });
     // setFormIsValid(
     //   emailState.isValid && passwordState.isValid
     // );
@@ -84,12 +84,12 @@ const Login = (props) => {
   };
 
   const validatePasswordHandler = () => {
-    dispatchPassword({type: 'Input_Blur'});
+    dispatchPassword({ type: 'Input_Blur' });
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(emailState.value, passwordState.value);
+    props.onLogin( emailState.value, passwordState.value );
   };
 
   return (
