@@ -80,7 +80,7 @@ const Login = (props) => {
   };
 
   const validateEmailHandler = () => {
-    dispatchEmail({type: 'Input_Blur'});
+    dispatchEmail({ type: 'Input_Blur' });
   };
 
   const validatePasswordHandler = () => {
@@ -93,8 +93,8 @@ const Login = (props) => {
   };
 
   return (
-    <Card className={classes.login}>
-      <form onSubmit={submitHandler}>
+    <Card className={ classes.login }>
+      <form onSubmit={ submitHandler }>
         <div
           className={`${classes.control} ${
             emailState.isValid === false ? classes.invalid : ''
@@ -104,13 +104,13 @@ const Login = (props) => {
           <input
             type="email"
             id="email"
-            value={emailState.value}
-            onChange={emailChangeHandler}
-            onBlur={validateEmailHandler}
+            value={ emailState.value }
+            onChange={ emailChangeHandler }
+            onBlur={ validateEmailHandler }
           />
         </div>
         <div
-          className={`${classes.control} ${
+          className={`${ classes.control } ${
             passwordState.isValid === false ? classes.invalid : ''
           }`}
         >
@@ -118,13 +118,13 @@ const Login = (props) => {
           <input
             type="password"
             id="password"
-            value={passwordState.value}
-            onChange={passwordChangeHandler}
-            onBlur={validatePasswordHandler}
+            value={ passwordState.value }
+            onChange={ passwordChangeHandler }
+            onBlur={ validatePasswordHandler }
           />
         </div>
         <div className={classes.actions}>
-          <Button type="submit" className={classes.btn} disabled={!formIsValid}>
+          <Button type="submit" className={ classes.btn } disabled={ !formIsValid }>
             Login
           </Button>
         </div>
